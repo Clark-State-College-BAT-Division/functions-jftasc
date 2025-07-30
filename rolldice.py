@@ -19,3 +19,23 @@
 # How many sides? 20
 # Here are the results: [18, 19, 6, 8, 13, 6, 6, 6, 18, 12, 20, 10, 14, 8, 14, 17, 12, 15, 20, 17]
 
+import random
+
+print("Welcome to Juan's Dice Roller Program!")
+
+def roll_dice(count, sides):
+    results = []
+    for i in range(count):
+        results.append(random.randint(1, sides))
+    return results
+
+dice = int(input("How many dice do you want to roll? "))
+sides = int(input("How many sides? "))
+
+if dice <= 0 or sides <= 1:
+    print("Error: Sides must be greater than 1 and dice count greater than 0.")
+else:
+    result = roll_dice(dice, sides)
+    print("Here are the results:", result)
+
+print("Thank you for using Juan's Dice Rolling program!")
